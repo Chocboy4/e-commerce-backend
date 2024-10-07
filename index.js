@@ -9,6 +9,9 @@ port = process.env.PORT || 3000
 
 
 app.use(express.json())
+app.use('/', (req, res) => {
+    res.send('server is working')
+})
 app.use("/api/user", require('./routes/userRoutes'))
 
 app.use('/api/products', require('./routes/productsRoutes'))
